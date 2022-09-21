@@ -1,5 +1,5 @@
 
-# Orplanner SDK Library
+# Bedtrack SDK Library
 
 
 
@@ -17,7 +17,7 @@ add me in the composer of your project
 
 Add me on the require:
 ````
-    "estimtrack/orplannersdkphp": "^1.0.0"
+    "estimtrack/bedtracksdkphp": "^1.0.0"
 ````
 and run:
 ````
@@ -41,7 +41,7 @@ Also make sure you import it in the composer of the parent project:
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Estimtrack\\Orplannersdkphp\\": "packages/estimtrack/orplannersdkphp/src"
+            "Estimtrack\\Bedtracksdkphp\\": "packages/estimtrack/bedtracksdkphp/src"
         }
     },
 ````

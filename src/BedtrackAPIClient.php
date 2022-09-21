@@ -17,12 +17,13 @@ class BedtrackAPIClient
         $this->url = $core_api_url;
     }
 
-    public function syncHospRequest( $entity, $guzzleConfig = [])
+    public function syncInstance(InstanceEntity $entity, $guzzleConfig = [])
     {
 
-        $params = [];
+        $params = json_decode(json_encode($entity),true) ;
 
-        $sendEpisodeUrl = 'public/episodes';
+
+        $sendEpisodeUrl = 'sync/instance';
         $client = new Client($guzzleConfig);
         $response = $client->request('POST', $this->url . $sendEpisodeUrl, [
             'form_params' => $params
