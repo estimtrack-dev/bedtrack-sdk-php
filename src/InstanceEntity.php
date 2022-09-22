@@ -884,7 +884,7 @@ class InstanceEntity
      */
     public function setChecklist($checklist)
     {
-        $this->checklist = $checklist;
+        $this->checklist = json_encode($checklist);
         return $this;
     }
 
