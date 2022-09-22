@@ -13,7 +13,7 @@ class InstanceEntity
     public $desti_alta;
     public $arrival_at;
     public $diagnostic;
-    public $portardor_via;
+    public $portador_via;
     public $antecendents;
     public $special_needs;
     public $proves_pendents;
@@ -151,20 +151,22 @@ class InstanceEntity
     /**
      * @return mixed
      */
-    public function getPortardorVia()
+    public function getPortadorVia()
     {
-        return $this->portardor_via;
+        return $this->portador_via;
     }
 
     /**
-     * @param mixed $portardor_via
+     * @param mixed $portador_via
      * @return InstanceEntity
      */
-    public function setPortardorVia($portardor_via)
+    public function setPortadorVia($portador_via)
     {
-        $this->portardor_via = $portardor_via;
+        $this->portador_via = $portador_via;
         return $this;
     }
+
+
 
     /**
      * @return mixed
