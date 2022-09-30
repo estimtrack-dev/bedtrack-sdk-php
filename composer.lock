@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44389742dd4fc9a6d162fcd12a1ef4c1",
+    "content-hash": "c1d290958f0c1b5171adb839fdcfe999",
     "packages": [],
     "packages-dev": [
         {
@@ -636,12 +636,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9be99737e3e8c97a9f2e9545f3dcb62cf54aa0f4"
+                "reference": "0121b1461752aaef5fb6794a66b6ff498b661f26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9be99737e3e8c97a9f2e9545f3dcb62cf54aa0f4",
-                "reference": "9be99737e3e8c97a9f2e9545f3dcb62cf54aa0f4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0121b1461752aaef5fb6794a66b6ff498b661f26",
+                "reference": "0121b1461752aaef5fb6794a66b6ff498b661f26",
                 "shasum": ""
             },
             "require": {
@@ -730,7 +730,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-19T15:48:08+00:00"
+            "time": "2022-09-27T12:47:19+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -1756,5 +1756,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.1.0"
 }

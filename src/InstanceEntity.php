@@ -70,7 +70,7 @@ class InstanceEntity
      * @param mixed $isEctopic
      * @return InstanceEntity
      */
-    public function setIsEctopic($isEctopic)
+    public function setIsEctopic($isEctopic): InstanceEntity
     {
         $this->isEctopic = $isEctopic;
         return $this;
@@ -88,7 +88,7 @@ class InstanceEntity
      * @param mixed $forecast_releasable_at
      * @return InstanceEntity
      */
-    public function setForecastReleasableAt($forecast_releasable_at)
+    public function setForecastReleasableAt($forecast_releasable_at): InstanceEntity
     {
         $this->forecast_releasable_at = $forecast_releasable_at;
         return $this;
@@ -106,7 +106,7 @@ class InstanceEntity
      * @param mixed $desti_alta
      * @return InstanceEntity
      */
-    public function setDestiAlta($desti_alta)
+    public function setDestiAlta($desti_alta): InstanceEntity
     {
         $this->desti_alta = $desti_alta;
         return $this;
@@ -124,7 +124,7 @@ class InstanceEntity
      * @param mixed $arrival_at
      * @return InstanceEntity
      */
-    public function setArrivalAt($arrival_at)
+    public function setArrivalAt($arrival_at): InstanceEntity
     {
         $this->arrival_at = $arrival_at;
         return $this;
@@ -142,7 +142,7 @@ class InstanceEntity
      * @param mixed $diagnostic
      * @return InstanceEntity
      */
-    public function setDiagnostic($diagnostic)
+    public function setDiagnostic($diagnostic): InstanceEntity
     {
         $this->diagnostic = $diagnostic;
         return $this;
@@ -160,7 +160,7 @@ class InstanceEntity
      * @param mixed $portador_via
      * @return InstanceEntity
      */
-    public function setPortadorVia($portador_via)
+    public function setPortadorVia($portador_via): InstanceEntity
     {
         $this->portador_via = $portador_via;
         return $this;
@@ -180,7 +180,7 @@ class InstanceEntity
      * @param mixed $antecendents
      * @return InstanceEntity
      */
-    public function setAntecendents($antecendents)
+    public function setAntecendents($antecendents): InstanceEntity
     {
         $this->antecendents = $antecendents;
         return $this;
@@ -198,7 +198,7 @@ class InstanceEntity
      * @param mixed $special_needs
      * @return InstanceEntity
      */
-    public function setSpecialNeeds($special_needs)
+    public function setSpecialNeeds($special_needs): InstanceEntity
     {
         $this->special_needs = $special_needs;
         return $this;
@@ -216,7 +216,7 @@ class InstanceEntity
      * @param mixed $proves_pendents
      * @return InstanceEntity
      */
-    public function setProvesPendents($proves_pendents)
+    public function setProvesPendents($proves_pendents): InstanceEntity
     {
         $this->proves_pendents = $proves_pendents;
         return $this;
@@ -234,7 +234,7 @@ class InstanceEntity
      * @param mixed $proves_realitzades
      * @return InstanceEntity
      */
-    public function setProvesRealitzades($proves_realitzades)
+    public function setProvesRealitzades($proves_realitzades): InstanceEntity
     {
         $this->proves_realitzades = $proves_realitzades;
         return $this;
@@ -252,7 +252,7 @@ class InstanceEntity
      * @param mixed $pending_analytics
      * @return InstanceEntity
      */
-    public function setPendingAnalytics($pending_analytics)
+    public function setPendingAnalytics($pending_analytics): InstanceEntity
     {
         $this->pending_analytics = $pending_analytics;
         return $this;
@@ -270,7 +270,7 @@ class InstanceEntity
      * @param mixed $last_deposition
      * @return InstanceEntity
      */
-    public function setLastDeposition($last_deposition)
+    public function setLastDeposition($last_deposition): InstanceEntity
     {
         $this->last_deposition = $last_deposition;
         return $this;
@@ -288,7 +288,7 @@ class InstanceEntity
      * @param mixed $quirurgic_intervention
      * @return InstanceEntity
      */
-    public function setQuirurgicIntervention($quirurgic_intervention)
+    public function setQuirurgicIntervention($quirurgic_intervention): InstanceEntity
     {
         $this->quirurgic_intervention = $quirurgic_intervention;
         return $this;
@@ -306,7 +306,7 @@ class InstanceEntity
      * @param mixed $drenatges
      * @return InstanceEntity
      */
-    public function setDrenatges($drenatges)
+    public function setDrenatges($drenatges): InstanceEntity
     {
         $this->drenatges = $drenatges;
         return $this;
@@ -324,7 +324,7 @@ class InstanceEntity
      * @param mixed $colostomia
      * @return InstanceEntity
      */
-    public function setColostomia($colostomia)
+    public function setColostomia($colostomia): InstanceEntity
     {
         $this->colostomia = $colostomia;
         return $this;
@@ -342,7 +342,7 @@ class InstanceEntity
      * @param mixed $sonda_vesical
      * @return InstanceEntity
      */
-    public function setSondaVesical($sonda_vesical)
+    public function setSondaVesical($sonda_vesical): InstanceEntity
     {
         $this->sonda_vesical = $sonda_vesical;
         return $this;
@@ -360,7 +360,7 @@ class InstanceEntity
      * @param mixed $oxigenoterapia
      * @return InstanceEntity
      */
-    public function setOxigenoterapia($oxigenoterapia)
+    public function setOxigenoterapia($oxigenoterapia): InstanceEntity
     {
         $this->oxigenoterapia = $oxigenoterapia;
         return $this;
@@ -378,7 +378,7 @@ class InstanceEntity
      * @param mixed $control_glicemia
      * @return InstanceEntity
      */
-    public function setControlGlicemia($control_glicemia)
+    public function setControlGlicemia($control_glicemia): InstanceEntity
     {
         $this->control_glicemia = $control_glicemia;
         return $this;
@@ -396,7 +396,7 @@ class InstanceEntity
      * @param mixed $nhc_mother
      * @return InstanceEntity
      */
-    public function setNhcMother($nhc_mother)
+    public function setNhcMother($nhc_mother): InstanceEntity
     {
         $this->nhc_mother = $nhc_mother;
         return $this;
@@ -414,7 +414,7 @@ class InstanceEntity
      * @param mixed $birth_at
      * @return InstanceEntity
      */
-    public function setBirthAt($birth_at)
+    public function setBirthAt($birth_at): InstanceEntity
     {
         $this->birth_at = $birth_at;
         return $this;
@@ -432,7 +432,7 @@ class InstanceEntity
      * @param mixed $part_type
      * @return InstanceEntity
      */
-    public function setPartType($part_type)
+    public function setPartType($part_type): InstanceEntity
     {
         $this->part_type = $part_type;
         return $this;
@@ -450,7 +450,7 @@ class InstanceEntity
      * @param mixed $nhc
      * @return InstanceEntity
      */
-    public function setNhc($nhc)
+    public function setNhc($nhc): InstanceEntity
     {
         $this->nhc = $nhc;
         return $this;
@@ -468,7 +468,7 @@ class InstanceEntity
      * @param mixed $bed_ref
      * @return InstanceEntity
      */
-    public function setBedRef($bed_ref)
+    public function setBedRef($bed_ref): InstanceEntity
     {
         $this->bed_ref = $bed_ref;
         return $this;
@@ -486,7 +486,7 @@ class InstanceEntity
      * @param mixed $bed_state
      * @return InstanceEntity
      */
-    public function setBedState($bed_state)
+    public function setBedState($bed_state): InstanceEntity
     {
         $this->bed_state = $bed_state;
         return $this;
@@ -522,7 +522,7 @@ class InstanceEntity
      * @param mixed $doctor_email
      * @return InstanceEntity
      */
-    public function setDoctorEmail($doctor_email)
+    public function setDoctorEmail($doctor_email): InstanceEntity
     {
         $this->doctor_email = $doctor_email;
         return $this;
@@ -540,7 +540,7 @@ class InstanceEntity
      * @param mixed $patient_type
      * @return InstanceEntity
      */
-    public function setPatientType($patient_type)
+    public function setPatientType($patient_type): InstanceEntity
     {
         $this->patient_type = $patient_type;
         return $this;
@@ -558,7 +558,7 @@ class InstanceEntity
      * @param mixed $fragility_index
      * @return InstanceEntity
      */
-    public function setFragilityIndex($fragility_index)
+    public function setFragilityIndex($fragility_index): InstanceEntity
     {
         $this->fragility_index = $fragility_index;
         return $this;
@@ -576,7 +576,7 @@ class InstanceEntity
      * @param mixed $bolquer
      * @return InstanceEntity
      */
-    public function setBolquer($bolquer)
+    public function setBolquer($bolquer): InstanceEntity
     {
         $this->bolquer = $bolquer;
         return $this;
@@ -594,7 +594,7 @@ class InstanceEntity
      * @param mixed $isolation_type
      * @return InstanceEntity
      */
-    public function setIsolationType($isolation_type)
+    public function setIsolationType($isolation_type): InstanceEntity
     {
         $this->isolation_type = $isolation_type;
         return $this;
@@ -612,7 +612,7 @@ class InstanceEntity
      * @param mixed $patient_name
      * @return InstanceEntity
      */
-    public function setPatientName($patient_name)
+    public function setPatientName($patient_name): InstanceEntity
     {
         $this->patient_name = $patient_name;
         return $this;
@@ -630,7 +630,7 @@ class InstanceEntity
      * @param mixed $patient_gender
      * @return InstanceEntity
      */
-    public function setPatientGender($patient_gender)
+    public function setPatientGender($patient_gender): InstanceEntity
     {
         $this->patient_gender = $patient_gender;
         return $this;
@@ -648,7 +648,7 @@ class InstanceEntity
      * @param mixed $patient_age
      * @return InstanceEntity
      */
-    public function setPatientAge($patient_age)
+    public function setPatientAge($patient_age): InstanceEntity
     {
         $this->patient_age = $patient_age;
         return $this;
@@ -666,7 +666,7 @@ class InstanceEntity
      * @param mixed $surname1
      * @return InstanceEntity
      */
-    public function setSurname1($surname1)
+    public function setSurname1($surname1): InstanceEntity
     {
         $this->surname1 = $surname1;
         return $this;
@@ -684,7 +684,7 @@ class InstanceEntity
      * @param mixed $surname2
      * @return InstanceEntity
      */
-    public function setSurname2($surname2)
+    public function setSurname2($surname2): InstanceEntity
     {
         $this->surname2 = $surname2;
         return $this;
@@ -702,7 +702,7 @@ class InstanceEntity
      * @param mixed $allergies
      * @return InstanceEntity
      */
-    public function setAllergies($allergies)
+    public function setAllergies($allergies): InstanceEntity
     {
         $this->allergies = $allergies;
         return $this;
@@ -720,7 +720,7 @@ class InstanceEntity
      * @param mixed $unique_ref
      * @return InstanceEntity
      */
-    public function setUniqueRef($unique_ref)
+    public function setUniqueRef($unique_ref): InstanceEntity
     {
         $this->unique_ref = $unique_ref;
         return $this;
@@ -738,7 +738,7 @@ class InstanceEntity
      * @param mixed $diet_type
      * @return InstanceEntity
      */
-    public function setDietType($diet_type)
+    public function setDietType($diet_type): InstanceEntity
     {
         $this->diet_type = $diet_type;
         return $this;
@@ -756,7 +756,7 @@ class InstanceEntity
      * @param mixed $cura
      * @return InstanceEntity
      */
-    public function setCura($cura)
+    public function setCura($cura): InstanceEntity
     {
         $this->cura = $cura;
         return $this;
@@ -774,7 +774,7 @@ class InstanceEntity
      * @param mixed $therapies
      * @return InstanceEntity
      */
-    public function setTherapies($therapies)
+    public function setTherapies($therapies): InstanceEntity
     {
         $this->therapies = $therapies;
         return $this;
@@ -792,7 +792,7 @@ class InstanceEntity
      * @param mixed $acos
      * @return InstanceEntity
      */
-    public function setAcos($acos)
+    public function setAcos($acos): InstanceEntity
     {
         $this->acos = $acos;
         return $this;
@@ -810,7 +810,7 @@ class InstanceEntity
      * @param mixed $informe_alta_signat
      * @return InstanceEntity
      */
-    public function setInformeAltaSignat($informe_alta_signat)
+    public function setInformeAltaSignat($informe_alta_signat): InstanceEntity
     {
         $this->informe_alta_signat = $informe_alta_signat;
         return $this;
@@ -828,7 +828,7 @@ class InstanceEntity
      * @param mixed $hosp_is_baby
      * @return InstanceEntity
      */
-    public function setHospIsBaby($hosp_is_baby)
+    public function setHospIsBaby($hosp_is_baby): InstanceEntity
     {
         $this->hosp_is_baby = $hosp_is_baby;
         return $this;
@@ -846,7 +846,7 @@ class InstanceEntity
      * @param mixed $service_ref
      * @return InstanceEntity
      */
-    public function setServiceRef($service_ref)
+    public function setServiceRef($service_ref): InstanceEntity
     {
         $this->service_ref = $service_ref;
         return $this;
@@ -864,7 +864,7 @@ class InstanceEntity
      * @param mixed $service_name
      * @return InstanceEntity
      */
-    public function setServiceName($service_name)
+    public function setServiceName($service_name): InstanceEntity
     {
         $this->service_name = $service_name;
         return $this;
@@ -882,7 +882,7 @@ class InstanceEntity
      * @param mixed $checklist
      * @return InstanceEntity
      */
-    public function setChecklist($checklist)
+    public function setChecklist($checklist): InstanceEntity
     {
         $this->checklist = json_encode($checklist);
         return $this;
@@ -900,7 +900,7 @@ class InstanceEntity
      * @param mixed $is_single_bed
      * @return InstanceEntity
      */
-    public function setIsSingleBed($is_single_bed)
+    public function setIsSingleBed($is_single_bed): InstanceEntity
     {
         $this->is_single_bed = $is_single_bed;
         return $this;
@@ -918,7 +918,7 @@ class InstanceEntity
      * @param mixed $is_alta_admin
      * @return InstanceEntity
      */
-    public function setIsAltaAdmin($is_alta_admin)
+    public function setIsAltaAdmin($is_alta_admin): InstanceEntity
     {
         $this->is_alta_admin = $is_alta_admin;
         return $this;
