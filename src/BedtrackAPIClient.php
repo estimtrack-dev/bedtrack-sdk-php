@@ -4,6 +4,7 @@ namespace Estimtrack\Bedtracksdkphp;
 
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class BedtrackAPIClient
 {
@@ -17,7 +18,10 @@ class BedtrackAPIClient
         $this->url = $core_api_url;
     }
 
-    public function syncInstance(InstanceEntity $entity, $guzzleConfig = [])
+    /**
+     * @throws GuzzleException
+     */
+    public function syncInstance(InstanceEntity $entity, $guzzleConfig = []): \Psr\Http\Message\ResponseInterface
     {
 
         $params = json_decode(json_encode($entity),true) ;
@@ -25,13 +29,10 @@ class BedtrackAPIClient
 
         $sendEpisodeUrl = 'sync/instance';
         $client = new Client($guzzleConfig);
-        $response = $client->request('POST', $this->url . $sendEpisodeUrl, [
+        return $client->request('POST', $this->url . $sendEpisodeUrl, [
             'form_params' => $params
         ]);
-
-        return $response->getBody()->getContents();
     }
-
 
 
 }
