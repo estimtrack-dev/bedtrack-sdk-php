@@ -36,4 +36,13 @@ class BedtrackConstants
     const ISO_CONTACT_AIR_ID = 5;
 
 
+    //accepted checklist answers .
+    const CREATE_FALSE_CHECK = 2;
+    const CREATE_CHECK_UNDEFINED = 0;
+    const CREATE_TRUE_CHECK = 1;
+
+    //standard accepted format days
+    const FORMAT_DAY = 'Y-m-d';
+
+
 }

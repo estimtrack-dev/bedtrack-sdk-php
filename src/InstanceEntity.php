@@ -8,6 +8,7 @@ use Illuminate\Support\Carbon;
 class InstanceEntity
 {
 
+
     public $isEctopic;
     public $forecast_releasable_at;
     public $desti_alta;
