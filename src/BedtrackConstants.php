@@ -28,4 +28,12 @@ class BedtrackConstants
     const FRAG_INDEX_4_ID = 4;
 
 
+    // isolation type ids => 1,2,3,4,5
+    const ISO_AIR_ID = 1;
+    const ISO_CONTACT_ID = 2;
+    const ISO_DROPS_ID = 3;
+    const ISO_CONTACT_DROPS_ID = 4;
+    const ISO_CONTACT_AIR_ID = 5;
+
+
 }
