@@ -58,6 +58,42 @@ class InstanceEntity
     public $is_single_bed;
     public $is_alta_admin;
 
+    public $area_ref;
+
+    /**
+     * @return mixed
+     */
+    public function getAreaRef()
+    {
+        return $this->area_ref;
+    }
+
+    /**
+     * @param mixed $area_ref
+     */
+    public function setAreaRef($area_ref): void
+    {
+        $this->area_ref = $area_ref;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAreaName()
+    {
+        return $this->area_name;
+    }
+
+    /**
+     * @param mixed $area_name
+     */
+    public function setAreaName($area_name): InstanceEntity
+    {
+        $this->area_name = $area_name;
+        return $this;
+    }
+    public $area_name;
+
 
     /**
      * @return mixed
