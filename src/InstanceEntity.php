@@ -71,9 +71,10 @@ class InstanceEntity
     /**
      * @param mixed $area_ref
      */
-    public function setAreaRef($area_ref): void
+    public function setAreaRef($area_ref): InstanceEntity
     {
         $this->area_ref = $area_ref;
+        return $this;
     }
 
     /**
