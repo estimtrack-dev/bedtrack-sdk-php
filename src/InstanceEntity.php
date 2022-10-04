@@ -3,8 +3,6 @@
 namespace Estimtrack\Bedtracksdkphp;
 
 
-use Illuminate\Support\Carbon;
-
 class InstanceEntity
 {
 
@@ -22,11 +20,10 @@ class InstanceEntity
     public $pending_analytics;
     public $last_deposition;
     public $quirurgic_intervention;
-    public $drenatges;
-    public $colostomia;
     public $sonda_vesical;
-    public $oxigenoterapia;
-    public $control_glicemia;
+    public bool $drenatges = false;
+    public bool $oxigenoterapia = false;
+    public bool $control_glicemia = false;
     public $nhc_mother;
     public $birth_at;
     public $part_type;
@@ -37,7 +34,6 @@ class InstanceEntity
     public $doctor_email;
     public $patient_type;
     public $fragility_index;
-    public $bolquer;
     public $isolation_type;
     public $patient_name;
     public $patient_gender;
@@ -55,8 +51,8 @@ class InstanceEntity
     public $service_ref;
     public $service_name;
     public $checklist;
-    public $is_single_bed;
-    public $is_alta_admin;
+    public  $is_single_bed ;
+    public  $is_alta_admin ;
 
     public $area_ref;
 
