@@ -5,31 +5,132 @@ namespace Estimtrack\Bedtracksdkphp;
 
 class InstanceEntity
 {
+    /**
+     * @var ?bool  true if patient is ectopic (a bed or unit that she/he is not supposed to be in)
+     */
+
+    public ?bool $isEctopic;
+
+    /**
+     * @var ?string  a string day in the format of Y-m-d
+     */
+    public ?string $forecast_releasable_at;
+
+    /**
+     * @var ?string  a free text field specifying the patient's next location after discharging her/him .
+     */
+    public ?string $desti_alta;
+
+    /**
+     * @var ?string patients date of arrival , ideally a timestamp . if not possible , a string day in format Y-m-d
+     */
+    public ?string $arrival_at;
+
+    /**
+     * @var ?string  patient's diagnosis
+     */
+    public ?string $diagnostic;
+
+    /**
+     * @var ?bool  true if patient is  carries intravenous route
+     */
+    public ?bool $portador_via;
+
+    /**
+     * @var ?string  a free text field specifying  patient's medical history
+     */
+    public ?string $antecendents;
+
+    /**
+     * @var ?string  a free text field specifying which kind of special needs does the patient require (if any)
+     */
+    public ?string $special_needs;
+
+    /**
+     * @var ?string  a string specifying the patient's  pending tests
+     */
+    public ?string $proves_pendents;
+
+    /**
+     * @var ?string  a string specifying the patient's  performed tests
+     */
+    public  ?string $proves_realitzades;
+
+    /**
+     * @var ?string  a string specifying the patient's pending analysis
+     */
+    public ?string $pending_analytics;
+
+    /**
+     * @var ?string  a string  date with the format Y-m-d specifying the last patient's deposition ->date format can be found ino BedtrackConstants.php
+     */
+
+    public ?string $last_deposition;
+
+    /**
+     * @var ?string  a string specifying the next quirurgic intervention (if any)
+     */
+    public ?string $quirurgic_intervention;
 
 
-    public $isEctopic;
-    public $forecast_releasable_at;
-    public $desti_alta;
-    public $arrival_at;
-    public $diagnostic;
-    public $portador_via;
-    public $antecendents;
-    public $special_needs;
-    public $proves_pendents;
-    public $proves_realitzades;
-    public $pending_analytics;
-    public $last_deposition;
-    public $quirurgic_intervention;
-    public $sonda_vesical;
+    /**
+     * @var ?bool  true if patient requires  urinary catheter
+     */
+
+    public ?bool $sonda_vesical;
+
+    /**
+     * @var bool  true if patient requires  drainage
+     */
+
     public bool $drenatges = false;
+
+    /**
+     * @var bool  true if patient requires  oxigenotherapy
+     */
     public bool $oxigenoterapia = false;
+
+    /**
+     * @var bool  true if patient requires glycemia control
+     */
     public bool $control_glicemia = false;
-    public $nhc_mother;
-    public $birth_at;
-    public $part_type;
-    public $nhc;
-    public $bed_ref;
-    public $bed_state;
+
+
+    /**
+     * @var ?string mother unique identifier, expected to be filled if the patient is a newborn
+     */
+    public ?string $nhc_mother;
+
+    /**
+     * @var ?string  birth type (for newborn patients) -> a string timestamp
+     */
+    public ?string $birth_at;
+
+    /**
+     * @var ?string  birth type (for newborn patients)
+     */
+    public ?string $part_type;
+
+    /**
+     * @var ?string  patient unique identifier
+     */
+    public ?string $nhc;
+
+    /**
+     * @var ?string  bed reference -> (or bed number)
+     */
+    public ?string $bed_ref;
+
+
+    /**
+     * @var ?int  current bed state . useful for disabling a bed or enabling it. the integer should correspond to one of the states specified in BedtrackConstants.php,
+     * ideally only one of those three
+     *
+     * BED_FREE
+     * BED_OCCUPIED
+     * BED_DISABLED
+     */
+    public ?int $bed_state;
     public $bed_booked;
     public $doctor_email;
     public $patient_type;
@@ -51,8 +152,8 @@ class InstanceEntity
     public $service_ref;
     public $service_name;
     public $checklist;
-    public  $is_single_bed ;
-    public  $is_alta_admin ;
+    public $is_single_bed;
+    public $is_alta_admin;
 
     public $area_ref;
 
@@ -89,6 +190,7 @@ class InstanceEntity
         $this->area_name = $area_name;
         return $this;
     }
+
     public $area_name;
 
 
@@ -199,7 +301,6 @@ class InstanceEntity
         $this->portador_via = $portador_via;
         return $this;
     }
-
 
 
     /**
@@ -957,7 +1058,6 @@ class InstanceEntity
         $this->is_alta_admin = $is_alta_admin;
         return $this;
     }
-
 
 
 }
