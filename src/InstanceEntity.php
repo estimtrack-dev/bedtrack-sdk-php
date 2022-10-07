@@ -5,11 +5,6 @@ namespace Estimtrack\Bedtracksdkphp;
 
 class InstanceEntity
 {
-    /**
-     * @var ?bool  true if patient is ectopic (a bed or unit that she/he is not supposed to be in)
-     */
-
-    public ?bool $isEctopic;
 
     /**
      * @var ?string  a string day in the format of Y-m-d
@@ -30,12 +25,6 @@ class InstanceEntity
      * @var ?string  patient's diagnosis
      */
     public ?string $diagnostic;
-
-    /**
-     * @var ?bool  true if patient is  carries intravenous route
-     */
-    public ?bool $portador_via;
-
     /**
      * @var ?string  a free text field specifying  patient's medical history
      */
@@ -62,7 +51,7 @@ class InstanceEntity
     public ?string $pending_analytics;
 
     /**
-     * @var ?string  a string  date with the format Y-m-d specifying the last patient's deposition ->date format can be found ino BedtrackConstants.php
+     * @var ?string  a string  date with the format Y-m-d specifying the last patient's deposition ->standard Estimtrack date format can be found in BedtrackConstants.php
      */
 
     public ?string $last_deposition;
@@ -95,6 +84,21 @@ class InstanceEntity
      */
     public bool $control_glicemia = false;
 
+    /**
+     * @var ?bool  true if patient is ectopic (a bed or unit that she/he is not supposed to be in)
+     */
+
+    public ?bool $isEctopic;
+
+    /**
+     * @var ?bool  true if patient carries intravenous route
+     */
+    public ?bool $portador_via;
+
+    /**
+     * @var ?bool  true if patient is isolated -> ideally , if true, the isolation_type field should also be provided
+     */
+    public ?bool $isolation;
 
     /**
      * @var ?string mother unique identifier, expected to be filled if the patient is a newborn
@@ -120,7 +124,6 @@ class InstanceEntity
      * @var ?string  bed reference -> (or bed number)
      */
     public ?string $bed_ref;
-
 
     /**
      * @var ?int  current bed state . useful for disabling a bed or enabling it. the integer should correspond to one of the states specified in BedtrackConstants.php,
@@ -195,9 +198,9 @@ class InstanceEntity
 
 
     /**
-     * @return mixed
+     * @return bool|null
      */
-    public function getIsEctopic()
+    public function getIsEctopic(): ?bool
     {
         return $this->isEctopic;
     }
@@ -213,9 +216,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getForecastReleasableAt()
+    public function getForecastReleasableAt(): ?string
     {
         return $this->forecast_releasable_at;
     }
@@ -231,9 +234,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getDestiAlta()
+    public function getDestiAlta(): ?string
     {
         return $this->desti_alta;
     }
@@ -248,10 +251,8 @@ class InstanceEntity
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getArrivalAt()
+
+    public function getArrivalAt(): ?string
     {
         return $this->arrival_at;
     }
@@ -266,16 +267,14 @@ class InstanceEntity
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDiagnostic()
+
+    public function getDiagnostic(): ?string
     {
         return $this->diagnostic;
     }
 
     /**
-     * @param mixed $diagnostic
+     * @param $diagnostic
      * @return InstanceEntity
      */
     public function setDiagnostic($diagnostic): InstanceEntity
@@ -285,9 +284,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return bool|null
      */
-    public function getPortadorVia()
+    public function getPortadorVia(): ?bool
     {
         return $this->portador_via;
     }
@@ -304,15 +303,15 @@ class InstanceEntity
 
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getAntecendents()
+    public function getAntecendents(): ?string
     {
         return $this->antecendents;
     }
 
     /**
-     * @param mixed $antecendents
+     * @param  $antecendents
      * @return InstanceEntity
      */
     public function setAntecendents($antecendents): InstanceEntity
@@ -1059,5 +1058,22 @@ class InstanceEntity
         return $this;
     }
 
+    /**
+     * @return bool|null
+     */
+    public function getIsolation(): ?bool
+    {
+        return $this->isolation;
+    }
+
+    /**
+     * @param bool|null $isolation
+     * @return InstanceEntity
+     */
+    public function setIsolation(?bool $isolation): InstanceEntity
+    {
+        $this->isolation = $isolation;
+        return $this;
+    }
 
 }
