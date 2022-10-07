@@ -91,9 +91,9 @@ class InstanceEntity
     public ?bool $isEctopic;
 
     /**
-     * @var ?bool  true if patient carries intravenous route
+     * @var ?string  patient carries intravenous route
      */
-    public ?bool $portador_via;
+    public ?string $portador_via;
 
     /**
      * @var ?bool  true if patient is isolated -> ideally , if true, the isolation_type field should also be provided
@@ -284,9 +284,9 @@ class InstanceEntity
     }
 
     /**
-     * @return bool|null
+     * @return string|null
      */
-    public function getPortadorVia(): ?bool
+    public function getPortadorVia(): ?string
     {
         return $this->portador_via;
     }
