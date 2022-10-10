@@ -7,6 +7,77 @@ class InstanceEntity
 {
 
     /**
+     * @var ?string hospitalization unique reference
+     */
+    public ?string $unique_ref;
+
+    /**
+     * @var ?string name of the patient
+     */
+    public ?string $patient_name;
+
+    /**
+     * @var ?mixed patient gender, 0 for man, 1 for woman .
+     */
+    public $patient_gender;
+
+    /**
+     * @var ?string  patient first surname
+     */
+    public ?string  $surname1;
+
+    /**
+     * @var ?string  patient second surname
+     */
+    public ?string $surname2;
+
+    /**
+     * @var ?string  string with patient allergies
+     */
+    public ?string $allergies;
+
+    /**
+     * @var ?string patient's diet type
+     */
+    public ?string $diet_type;
+
+    /**
+     * @var ?string some extra required care treatment .
+     */
+    public ?string $cura;
+
+    /**
+     * @var ?string  required therapies .
+     */
+    public ?string $therapies;
+
+    /**
+     * @var ?string acos .
+     */
+    public ?string $acos;
+
+    /**
+     * @var ?string unique service reference
+     *
+     */
+    public ?string  $service_ref;
+
+    /**
+     * @var ?string unique service name
+     *
+     */
+    public ?string $service_name;
+
+    /**
+     * @var ?string  json encoded array of checklists
+     */
+    public ?string $checklist;
+    /**
+     * @var ?string  unique area reference
+     */
+
+    public ?string $area_ref;
+    /**
      * @var ?string  a string day in the format of Y-m-d
      */
     public ?string $forecast_releasable_at;
@@ -43,7 +114,7 @@ class InstanceEntity
     /**
      * @var ?string  a string specifying the patient's  performed tests
      */
-    public  ?string $proves_realitzades;
+    public ?string $proves_realitzades;
 
     /**
      * @var ?string  a string specifying the patient's pending analysis
@@ -60,6 +131,92 @@ class InstanceEntity
      * @var ?string  a string specifying the next quirurgic intervention (if any)
      */
     public ?string $quirurgic_intervention;
+
+    /**
+     * @var ?string mother unique identifier, expected to be filled if the patient is a newborn
+     */
+    public ?string $nhc_mother;
+
+    /**
+     * @var ?string  birth type (for newborn patients) -> a string timestamp
+     */
+    public ?string $birth_at;
+
+    /**
+     * @var ?string  birth type (for newborn patients)
+     */
+    public ?string $part_type;
+
+    /**
+     * @var ?string  patient unique identifier
+     */
+    public ?string $nhc;
+
+    /**
+     * @var ?string  doctor reference (ideally email but not necessary) ->unique
+     */
+    public ?string $doctor_email;
+
+    /**
+     * @var ?string unique  bed reference, usually bed number .
+     */
+    public ?string $bed_ref;
+
+
+    /**
+     * @var ?string  patient carries intravenous route
+     */
+    public ?string $portador_via;
+
+
+    /**
+     * @var ?int patient age .
+     */
+    public ?int  $patient_age;
+
+    /**
+     * @var ?int  current bed state . useful for disabling a bed or enabling it.
+     * the integer should correspond to one of the states specified in BedtrackConstants.php,
+     * ideally only one of those three
+     *
+     * BED_FREE
+     * BED_OCCUPIED
+     * BED_DISABLED
+     */
+    public ?int $bed_state;
+
+
+    /**
+     * @var ?int patient type, corresponding to one of the possible ids in bedtrack constants
+     * PATIENT_TYPE_PRIVATE_ID = 1;
+     * PATIENT_TYPE_MUTUA_ID = 2;
+     * PATIENT_TYPE_CATSALUT_ID = 3;
+     * PATIENT_TYPE_CATSALUT_PRIVATE_ID = 4;
+     *
+     */
+    public ?int $patient_type;
+
+    /**
+     * @var ?int fragility index, corresponding to one of the possible ids in bedtrack constants
+     * FRAG_INDEX_1_ID = 1;
+     * FRAG_INDEX_2_ID = 2;
+     * FRAG_INDEX_3_ID = 3;
+     * FRAG_INDEX_4_ID = 4;
+     *
+     */
+    public ?int $fragility_index;
+
+    /**
+     * @var ?int isolation type, corresponding to one of the possible ids in bedtrack constants
+        * ISO_AIR_ID = 1;
+        * ISO_CONTACT_ID = 2;
+        * ISO_DROPS_ID = 3;
+        * ISO_CONTACT_DROPS_ID = 4;
+        * ISO_CONTACT_AIR_ID = 5;
+
+     *
+     */
+    public ?int  $isolation_type;
 
 
     /**
@@ -87,13 +244,8 @@ class InstanceEntity
     /**
      * @var ?bool  true if patient is ectopic (a bed or unit that she/he is not supposed to be in)
      */
-
     public ?bool $isEctopic;
 
-    /**
-     * @var ?string  patient carries intravenous route
-     */
-    public ?string $portador_via;
 
     /**
      * @var ?bool  true if patient is isolated -> ideally , if true, the isolation_type field should also be provided
@@ -101,69 +253,36 @@ class InstanceEntity
     public ?bool $isolation;
 
     /**
-     * @var ?string mother unique identifier, expected to be filled if the patient is a newborn
+     * @var ?bool  true if bed has been booked
      */
-    public ?string $nhc_mother;
+    public ?bool $bed_booked;
+
 
     /**
-     * @var ?string  birth type (for newborn patients) -> a string timestamp
+     * @var ?bool true if  discharge report has been signed .
      */
-    public ?string $birth_at;
+    public ?bool $informe_alta_signat;
 
     /**
-     * @var ?string  birth type (for newborn patients)
+     * @var ?bool true if  the patient hospitalized is a newborn .
      */
-    public ?string $part_type;
+
+    public ?bool $hosp_is_baby;
 
     /**
-     * @var ?string  patient unique identifier
+     * @var ?bool true if the bed is the only one in the room .
      */
-    public ?string $nhc;
+    public ?bool $is_single_bed;
 
     /**
-     * @var ?string  bed reference -> (or bed number)
+     * @var ?bool true if  patient has been officially discharged.
      */
-    public ?string $bed_ref;
+    public ?bool  $is_alta_admin;
 
     /**
-     * @var ?int  current bed state . useful for disabling a bed or enabling it. the integer should correspond to one of the states specified in BedtrackConstants.php,
-     * ideally only one of those three
-     *
-     * BED_FREE
-     * BED_OCCUPIED
-     * BED_DISABLED
+     * @return string|null
      */
-    public ?int $bed_state;
-    public $bed_booked;
-    public $doctor_email;
-    public $patient_type;
-    public $fragility_index;
-    public $isolation_type;
-    public $patient_name;
-    public $patient_gender;
-    public $patient_age;
-    public $surname1;
-    public $surname2;
-    public $allergies;
-    public $unique_ref;
-    public $diet_type;
-    public $cura;
-    public $therapies;
-    public $acos;
-    public $informe_alta_signat;
-    public $hosp_is_baby;
-    public $service_ref;
-    public $service_name;
-    public $checklist;
-    public $is_single_bed;
-    public $is_alta_admin;
-
-    public $area_ref;
-
-    /**
-     * @return mixed
-     */
-    public function getAreaRef()
+    public function getAreaRef(): ?string
     {
         return $this->area_ref;
     }
