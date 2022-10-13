@@ -24,7 +24,7 @@ class InstanceEntity
     /**
      * @var ?string  patient first surname
      */
-    public ?string  $surname1;
+    public ?string $surname1;
 
     /**
      * @var ?string  patient second surname
@@ -60,7 +60,7 @@ class InstanceEntity
      * @var ?string unique service reference
      *
      */
-    public ?string  $service_ref;
+    public ?string $service_ref;
 
     /**
      * @var ?string unique service name
@@ -168,11 +168,15 @@ class InstanceEntity
      */
     public ?string $portador_via;
 
+    /**
+     * @var ?string isolation description
+     */
+    public ?string $isolation_desc;
 
     /**
      * @var ?int patient age .
      */
-    public ?int  $patient_age;
+    public ?int $patient_age;
 
     /**
      * @var ?int  current bed state . useful for disabling a bed or enabling it.
@@ -208,15 +212,14 @@ class InstanceEntity
 
     /**
      * @var ?int isolation type, corresponding to one of the possible ids in bedtrack constants
-        * ISO_AIR_ID = 1;
-        * ISO_CONTACT_ID = 2;
-        * ISO_DROPS_ID = 3;
-        * ISO_CONTACT_DROPS_ID = 4;
-        * ISO_CONTACT_AIR_ID = 5;
-
+     * ISO_AIR_ID = 1;
+     * ISO_CONTACT_ID = 2;
+     * ISO_DROPS_ID = 3;
+     * ISO_CONTACT_DROPS_ID = 4;
+     * ISO_CONTACT_AIR_ID = 5;
      *
      */
-    public ?int  $isolation_type;
+    public ?int $isolation_type;
 
 
     /**
@@ -277,7 +280,7 @@ class InstanceEntity
     /**
      * @var ?bool true if  patient has been officially discharged.
      */
-    public ?bool  $is_alta_admin;
+    public ?bool $is_alta_admin;
 
     /**
      * @return string|null
@@ -1192,6 +1195,24 @@ class InstanceEntity
     public function setIsolation(?bool $isolation): InstanceEntity
     {
         $this->isolation = $isolation;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIsolationDesc(): ?string
+    {
+        return $this->isolation_desc;
+    }
+
+    /**
+     * @param string|null $isolation_desc
+     * @return InstanceEntity
+     */
+    public function setIsolationDesc(?string $isolation_desc): InstanceEntity
+    {
+        $this->isolation_desc = $isolation_desc;
         return $this;
     }
 
