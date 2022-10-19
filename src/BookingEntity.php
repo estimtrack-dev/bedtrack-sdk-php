@@ -10,11 +10,16 @@ class BookingEntity
      */
     public string $bed_ref;
 
-
     /**
      * @var ?string expected date of patient arrival, a string day in format Y-m-d . generally a date lying in the future .
      */
     public ?string $arrival_at;
+
+    /**
+     * @var ?string patient unique identifier .
+     */
+    public ?string $patient_nhc;
+
 
 
     /**
@@ -53,7 +58,23 @@ class BookingEntity
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getPatientNhc(): ?string
+    {
+        return $this->patient_nhc;
+    }
 
+    /**
+     * @param string|null $patient_nhc
+     * @return BookingEntity
+     */
+    public function setPatientNhc(?string $patient_nhc): BookingEntity
+    {
+        $this->patient_nhc = $patient_nhc;
+        return $this;
+    }
 
 
 }
