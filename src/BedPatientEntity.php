@@ -126,4 +126,23 @@ class BedPatientEntity extends BedEntity
         return $this;
     }
 
+
+    /**
+     * @return string|null
+     */
+    public function getNhc(): ?string
+    {
+        return $this->nhc;
+    }
+
+    /**
+     * @param mixed $nhc
+     * @return InstanceEntity
+     */
+    public function setNhc($nhc): self
+    {
+        $this->nhc = $nhc;
+        return $this;
+    }
+
 }

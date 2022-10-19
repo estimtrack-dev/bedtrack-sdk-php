@@ -654,24 +654,6 @@ class InstanceEntity extends BedPatientEntity
     }
 
     /**
-     * @return string|null
-     */
-    public function getNhc(): ?string
-    {
-        return $this->nhc;
-    }
-
-    /**
-     * @param mixed $nhc
-     * @return InstanceEntity
-     */
-    public function setNhc($nhc): InstanceEntity
-    {
-        $this->nhc = $nhc;
-        return $this;
-    }
-
-    /**
      * @return int|null
      */
     public function getBedState(): ?int
