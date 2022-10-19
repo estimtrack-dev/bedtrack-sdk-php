@@ -2,41 +2,35 @@
 
 namespace Estimtrack\Bedtracksdkphp;
 
-class BookingEntity
+class BookingEntity extends BedPatientEntity
 {
-
-    /**
-     * @var string unique bed reference, usually bed number .
-     */
-    public string $bed_ref;
 
     /**
      * @var ?string expected date of patient arrival, a string day in format Y-m-d . generally a date lying in the future .
      */
     public ?string $arrival_at;
 
-    /**
-     * @var ?string patient unique identifier .
-     */
-    public ?string $patient_nhc;
-
-
 
     /**
-     * @return string
+     * @var bool true if we want to make a booking, false if the booking is being undone .
      */
-    public function getBedRef(): string
+    public bool $isBooked;
+
+    /**
+     * @return bool
+     */
+    public function isBooked(): bool
     {
-        return $this->bed_ref;
+        return $this->isBooked;
     }
 
     /**
-     * @param string $bed_ref
+     * @param bool $isBooked
      * @return BookingEntity
      */
-    public function setBedRef(string $bed_ref): BookingEntity
+    public function setIsBooked(bool $isBooked): BookingEntity
     {
-        $this->bed_ref = $bed_ref;
+        $this->isBooked = $isBooked;
         return $this;
     }
 
@@ -55,24 +49,6 @@ class BookingEntity
     public function setArrivalAt(?string $arrival_at): BookingEntity
     {
         $this->arrival_at = $arrival_at;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getPatientNhc(): ?string
-    {
-        return $this->patient_nhc;
-    }
-
-    /**
-     * @param string|null $patient_nhc
-     * @return BookingEntity
-     */
-    public function setPatientNhc(?string $patient_nhc): BookingEntity
-    {
-        $this->patient_nhc = $patient_nhc;
         return $this;
     }
 

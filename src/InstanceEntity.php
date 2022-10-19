@@ -3,7 +3,7 @@
 namespace Estimtrack\Bedtracksdkphp;
 
 
-class InstanceEntity
+class InstanceEntity extends BedPatientEntity
 {
 
     /**
@@ -11,25 +11,6 @@ class InstanceEntity
      */
     public ?string $unique_ref;
 
-    /**
-     * @var ?string name of the patient
-     */
-    public ?string $patient_name;
-
-    /**
-     * @var ?mixed patient gender, 0 for man, 1 for woman .
-     */
-    public $patient_gender;
-
-    /**
-     * @var ?string  patient first surname
-     */
-    public ?string $surname1;
-
-    /**
-     * @var ?string  patient second surname
-     */
-    public ?string $surname2;
 
     /**
      * @var ?string  string with patient allergies
@@ -56,17 +37,6 @@ class InstanceEntity
      */
     public ?string $acos;
 
-    /**
-     * @var ?string unique service reference
-     *
-     */
-    public ?string $service_ref;
-
-    /**
-     * @var ?string unique service name
-     *
-     */
-    public ?string $service_name;
 
     /**
      * @var ?string  json encoded array of checklists
@@ -157,10 +127,6 @@ class InstanceEntity
      */
     public ?string $doctor_email;
 
-    /**
-     * @var ?string unique  bed reference, usually bed number .
-     */
-    public ?string $bed_ref;
 
 
     /**
@@ -173,10 +139,6 @@ class InstanceEntity
      */
     public ?string $isolation_desc;
 
-    /**
-     * @var ?int patient age .
-     */
-    public ?int $patient_age;
 
     /**
      * @var ?int  current bed state . useful for disabling a bed or enabling it.
@@ -249,17 +211,10 @@ class InstanceEntity
      */
     public ?bool $isEctopic;
 
-
     /**
      * @var ?bool  true if patient is isolated -> ideally , if true, the isolation_type field should also be provided
      */
     public ?bool $isolation;
-
-    /**
-     * @var ?bool  true if bed has been booked
-     */
-    public ?bool $bed_booked;
-
 
     /**
      * @var ?bool true if  discharge report has been signed .
@@ -281,6 +236,10 @@ class InstanceEntity
      * @var ?bool true if  patient has been officially discharged.
      */
     public ?bool $is_alta_admin;
+    /**
+     * @var mixed
+     */
+    private $colostomia;
 
     /**
      * @return string|null
@@ -443,9 +402,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getSpecialNeeds()
+    public function getSpecialNeeds(): ?string
     {
         return $this->special_needs;
     }
@@ -461,9 +420,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getProvesPendents()
+    public function getProvesPendents(): ?string
     {
         return $this->proves_pendents;
     }
@@ -497,7 +456,7 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getPendingAnalytics()
     {
@@ -515,9 +474,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getLastDeposition()
+    public function getLastDeposition(): ?string
     {
         return $this->last_deposition;
     }
@@ -533,9 +492,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getQuirurgicIntervention()
+    public function getQuirurgicIntervention(): ?string
     {
         return $this->quirurgic_intervention;
     }
@@ -605,9 +564,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
-    public function getOxigenoterapia()
+    public function getOxigenoterapia(): bool
     {
         return $this->oxigenoterapia;
     }
@@ -623,9 +582,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
-    public function getControlGlicemia()
+    public function getControlGlicemia(): bool
     {
         return $this->control_glicemia;
     }
@@ -641,9 +600,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getNhcMother()
+    public function getNhcMother(): ?string
     {
         return $this->nhc_mother;
     }
@@ -659,9 +618,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getBirthAt()
+    public function getBirthAt(): ?string
     {
         return $this->birth_at;
     }
@@ -677,9 +636,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getPartType()
+    public function getPartType(): ?string
     {
         return $this->part_type;
     }
@@ -695,9 +654,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getNhc()
+    public function getNhc(): ?string
     {
         return $this->nhc;
     }
@@ -713,27 +672,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getBedRef()
-    {
-        return $this->bed_ref;
-    }
-
-    /**
-     * @param mixed $bed_ref
-     * @return InstanceEntity
-     */
-    public function setBedRef($bed_ref): InstanceEntity
-    {
-        $this->bed_ref = $bed_ref;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBedState()
+    public function getBedState(): ?int
     {
         return $this->bed_state;
     }
@@ -748,28 +689,11 @@ class InstanceEntity
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBedBooked()
-    {
-        return $this->bed_booked;
-    }
 
     /**
-     * @param mixed $bed_booked
-     * @return InstanceEntity
+     * @return string|null
      */
-    public function setBedBooked($bed_booked)
-    {
-        $this->bed_booked = $bed_booked;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDoctorEmail()
+    public function getDoctorEmail(): ?string
     {
         return $this->doctor_email;
     }
@@ -785,9 +709,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getPatientType()
+    public function getPatientType(): ?int
     {
         return $this->patient_type;
     }
@@ -803,9 +727,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
-    public function getFragilityIndex()
+    public function getFragilityIndex(): ?int
     {
         return $this->fragility_index;
     }
@@ -857,99 +781,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getPatientName()
-    {
-        return $this->patient_name;
-    }
-
-    /**
-     * @param mixed $patient_name
-     * @return InstanceEntity
-     */
-    public function setPatientName($patient_name): InstanceEntity
-    {
-        $this->patient_name = $patient_name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPatientGender()
-    {
-        return $this->patient_gender;
-    }
-
-    /**
-     * @param mixed $patient_gender
-     * @return InstanceEntity
-     */
-    public function setPatientGender($patient_gender): InstanceEntity
-    {
-        $this->patient_gender = $patient_gender;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPatientAge()
-    {
-        return $this->patient_age;
-    }
-
-    /**
-     * @param mixed $patient_age
-     * @return InstanceEntity
-     */
-    public function setPatientAge($patient_age): InstanceEntity
-    {
-        $this->patient_age = $patient_age;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname1()
-    {
-        return $this->surname1;
-    }
-
-    /**
-     * @param mixed $surname1
-     * @return InstanceEntity
-     */
-    public function setSurname1($surname1): InstanceEntity
-    {
-        $this->surname1 = $surname1;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname2()
-    {
-        return $this->surname2;
-    }
-
-    /**
-     * @param mixed $surname2
-     * @return InstanceEntity
-     */
-    public function setSurname2($surname2): InstanceEntity
-    {
-        $this->surname2 = $surname2;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAllergies()
+    public function getAllergies(): ?string
     {
         return $this->allergies;
     }
@@ -965,9 +799,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getUniqueRef()
+    public function getUniqueRef(): ?string
     {
         return $this->unique_ref;
     }
@@ -983,9 +817,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getDietType()
+    public function getDietType(): ?string
     {
         return $this->diet_type;
     }
@@ -1001,9 +835,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getCura()
+    public function getCura(): ?string
     {
         return $this->cura;
     }
@@ -1019,9 +853,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
-    public function getTherapies()
+    public function getTherapies(): ?string
     {
         return $this->therapies;
     }
@@ -1073,9 +907,9 @@ class InstanceEntity
     }
 
     /**
-     * @return mixed
+     * @return bool|null
      */
-    public function getHospIsBaby()
+    public function getHospIsBaby(): ?bool
     {
         return $this->hosp_is_baby;
     }
@@ -1090,46 +924,11 @@ class InstanceEntity
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getServiceRef()
-    {
-        return $this->service_ref;
-    }
 
     /**
-     * @param mixed $service_ref
-     * @return InstanceEntity
+     * @return string|null
      */
-    public function setServiceRef($service_ref): InstanceEntity
-    {
-        $this->service_ref = $service_ref;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getServiceName()
-    {
-        return $this->service_name;
-    }
-
-    /**
-     * @param mixed $service_name
-     * @return InstanceEntity
-     */
-    public function setServiceName($service_name): InstanceEntity
-    {
-        $this->service_name = $service_name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getChecklist()
+    public function getChecklist(): ?string
     {
         return $this->checklist;
     }
