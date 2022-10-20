@@ -11,7 +11,7 @@ class BookingRefsEntity
     public ?array $booking_refs = [];
 
 
-    public function addBookingRef(BookingRefsEntity $entity){
+    public function addBookingRef(BookingRefEntity $entity){
 
         $this->booking_refs[]=  json_decode(json_encode($entity),true);
 
