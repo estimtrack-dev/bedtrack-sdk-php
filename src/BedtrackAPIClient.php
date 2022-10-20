@@ -47,4 +47,18 @@ class BedtrackAPIClient
             'form_params' => $params
         ]);
     }
+
+
+    /**
+     * @throws GuzzleException
+     */
+    public function syncBookingRefs(BookingRefsEntity $entity, $guzzleConfig = []): ResponseInterface
+    {
+        $params = json_decode(json_encode($entity),true) ;
+        $sendEpisodeUrl = 'sync/booking_refs';
+        $client = new Client($guzzleConfig);
+        return $client->request('POST', $this->url . $sendEpisodeUrl, [
+            'form_params' => $params
+        ]);
+    }
 }
