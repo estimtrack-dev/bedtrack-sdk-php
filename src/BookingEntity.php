@@ -4,6 +4,15 @@ namespace Estimtrack\Bedtracksdkphp;
 
 class BookingEntity extends BedPatientEntity
 {
+    /**
+     * @var ?string hospitalization unique reference
+     */
+    public ?string $unique_ref;
+
+    /**
+     * @var ?string  patient's diagnosis
+     */
+    public ?string $diagnostic;
 
     /**
      * @var ?string expected date of patient arrival, a string day in format Y-m-d . generally a date lying in the future .
@@ -51,6 +60,37 @@ class BookingEntity extends BedPatientEntity
         $this->arrival_at = $arrival_at;
         return $this;
     }
+
+
+    public function getDiagnostic(): ?string
+    {
+        return $this->diagnostic;
+    }
+
+
+    public function setDiagnostic($diagnostic): BookingEntity
+    {
+        $this->diagnostic = $diagnostic;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getUniqueRef(): ?string
+    {
+        return $this->unique_ref;
+    }
+
+    /**
+     * @param mixed $unique_ref
+     */
+    public function setUniqueRef($unique_ref): BookingEntity
+    {
+        $this->unique_ref = $unique_ref;
+        return $this;
+    }
+
 
 
 }

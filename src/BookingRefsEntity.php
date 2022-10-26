@@ -22,11 +22,7 @@ class BookingRefsEntity
 
     public function setArrayBookingRefs(array $bookingRefs)
     {
-
-
         $this->booking_refs = json_encode($bookingRefs);
-
-
     }
 
     public function addBookingRef(BookingRefEntity $entity)
