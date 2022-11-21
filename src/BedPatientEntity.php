@@ -31,9 +31,8 @@ class BedPatientEntity extends BedEntity
     public ?string $nhc;
 
     /**
-     * @var ?int patient age .
      */
-    public ?int $patient_age;
+    public $patient_age;
 
 
     /**
@@ -73,9 +72,8 @@ class BedPatientEntity extends BedEntity
     }
 
     /**
-     * @return int|null
      */
-    public function getPatientAge(): ?int
+    public function getPatientAge()
     {
         return $this->patient_age;
     }
